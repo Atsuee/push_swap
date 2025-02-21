@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: walidailas <walidailas@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/09 10:43:46 by wailas            #+#    #+#             */
-/*   Updated: 2025/02/06 11:12:25 by walidailas       ###   ########.fr       */
+/*   Created: 2025/01/29 15:45:35 by wailas            #+#    #+#             */
+/*   Updated: 2025/02/06 11:14:49 by walidailas       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
+#include "checker.h"
 
 int	*convert_args_to_int(int argc, char **argv)
 {
@@ -65,14 +65,14 @@ void	init_stack(t_stack *stack_a, t_stack *stack_b, int argc, char **argv)
 	unified_args = split_arguments(argc, argv, &new_argc);
 	if (!unified_args)
 	{
-		display_error("Error\n", NULL, NULL);
+		display_error("Error: Failed to parse arguments", NULL, NULL);
 		return ;
 	}
 	nb = convert_args_to_int(new_argc, unified_args);
 	free_split(unified_args);
 	if (!nb)
 	{
-		display_error("Error\n", NULL, NULL);
+		display_error("Error: Memory allocation failed", NULL, NULL);
 		return ;
 	}
 	initialize_stack_data(stack_a, new_argc, nb);

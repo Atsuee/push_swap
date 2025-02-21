@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   verif.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: walidailas <walidailas@student.42.fr>      +#+  +:+       +#+        */
+/*   By: wailas <wailas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/07 11:14:09 by wailas            #+#    #+#             */
-/*   Updated: 2025/02/04 12:26:48 by wailas           ###   ########.fr       */
+/*   Created: 2025/02/04 11:52:19 by wailas            #+#    #+#             */
+/*   Updated: 2025/02/04 11:53:21 by wailas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/push_swap.h"
-#include <stdlib.h>
+#include "checker.h"
 
 int	ft_is_duplicate(int num, char **argv, int i)
 {
@@ -46,16 +45,14 @@ void	cleanup_args(void *data)
 	char	**args;
 	int		i;
 
-	args = (char **)data;
-	if (!args)
-		return ;
 	i = 0;
-	while (args[i])
+	args = (void *)data;
+	if (args)
 	{
-		free(args[i]);
-		i++;
+		while (args[i])
+			free(args[i++]);
+		free(args);
 	}
-	free(args);
 }
 
 void	check_arg_errors(char **args, int i, int allocated)

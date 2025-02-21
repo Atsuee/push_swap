@@ -57,9 +57,13 @@ LST_SRCS	:=	ft_atoi.c \
 				printf/ft_printf_untils.c \
 				printf/ft_printf.c \
 				printf/ft_putnbrbase.c \
+				gnl/get_next_line.c \
+				gnl/get_next_line_bonus.c \
+				gnl/get_next_line_utils_bonus.c \
+				gnl/get_next_line_utils.c \
 
 LST_OBJS	:=	$(LST_SRCS:.c=.o)
-LST_INCS	:=	libft.h ft_printf.h
+LST_INCS	:=	libft.h ft_printf.h get_next_line.h get_next_line_bonus.h
 
 SRCS		:=	$(addprefix $(DIR_SRCS)/,$(LST_SRCS))
 OBJS		:=	$(addprefix $(DIR_OBJS)/,$(LST_OBJS))
@@ -72,29 +76,26 @@ GREEN		=	\033[32m
 END			=	\033[0m
 
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c $(INCS) Makefile
-	mkdir -p $(DIR_OBJS)
-	mkdir -p $(DIR_OBJS)/printf
-	mkdir -p $(DIR_OBJS)/printf
-	$(CC) $(FLAGS) -D BUFFER_SIZE=${BUFFER_SIZE} -I $(DIR_INCS) -c $< -o $@
-	printf "$(ERASE)$(BLUE) > Compilation :$(END) $<"
+	@mkdir -p $(DIR_OBJS)
+	@mkdir -p $(DIR_OBJS)/printf
+	@mkdir -p $(DIR_OBJS)/gnl
+	@$(CC) $(FLAGS) -D BUFFER_SIZE=${BUFFER_SIZE} -I $(DIR_INCS) -c $< -o $@
+	@echo "$(ERASE)$(BLUE) > Compilation :$(END) $<"
 
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	ar rcs $@ $^
-	printf "$(ERASE)$(GREEN)$@ made\n$(END)"
+	@ar rcs $@ $^
+	@echo "$(ERASE)$(GREEN)$@ made\n$(END)"
 
 clean:
-	rm -rf $(DIR_OBJS)
-	printf "$(YELLOW)$(DIR_OBJS) removed$(END)\n"
+	@rm -rf $(DIR_OBJS)
+	@echo "$(YELLOW)$(DIR_OBJS) removed$(END)\n"
 
 fclean:		clean
-	rm -rdf	$(NAME)
-	printf "$(YELLOW)$(NAME) removed$(END)\n"
+	@rm -rdf	$(NAME)
+	@echo "$(YELLOW)$(NAME) removed$(END)\n"
 
 re:			fclean all
 
 .PHONY:	all clean fclean re
-.SILENT:
-
-

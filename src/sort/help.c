@@ -3,34 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   help.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wailas <wailas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: walidailas <walidailas@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 13:57:05 by wailas            #+#    #+#             */
-/*   Updated: 2025/01/27 17:31:21 by wailas           ###   ########.fr       */
+/*   Updated: 2025/02/04 12:16:13 by wailas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-void	display_error(char *error_msg)
+void	display_error(char *error_msg, void (*cleanup)(void*), void *data)
 {
+	if (cleanup != NULL)
+		cleanup(data);
 	write(2, error_msg, ft_strlen(error_msg));
 	exit(EXIT_FAILURE);
-}
-
-int	pop_stack(t_stack *stack)
-{
-	t_node	*top;
-	int		data;
-
-	if (!stack || !stack->head)
-		return (0);
-	top = stack->head;
-	data = top->data;
-	stack->head = top->next;
-	free(top);
-	stack->size--;
-	return (data);
 }
 
 int	ft_lstsize_stack(t_node *head)

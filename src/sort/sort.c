@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort3.c                                            :+:      :+:    :+:   */
+/*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wailas <wailas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: walidailas <walidailas@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 12:33:22 by wailas            #+#    #+#             */
-/*   Updated: 2025/01/13 12:33:23 by wailas           ###   ########.fr       */
+/*   Updated: 2025/02/05 17:57:44 by walidailas       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
 
-int	is_rot_sort(t_stack *stack, int min_s_index)
+int	sort_three(t_stack *stack, int min_s_index)
 {
 	int	a;
 	int	b;
@@ -40,22 +40,22 @@ void	simple_sort(t_stack *stack, int length)
 		return ;
 	min_s_index = get_min_index(stack);
 	r = count(stack->head, min_s_index);
-	if (is_rot_sort(stack, min_s_index))
+	if (sort_three(stack, min_s_index))
 	{
 		if (r < length - r)
-			ft_rotate(stack, 'a');
+			ft_rotate(stack, 'a', true);
 		else
-			ft_reverse_rotate(stack, 'a');
+			ft_reverse_rotate(stack, 'a', true);
 	}
 	else
 	{
-		ft_swap(stack, 'a');
+		ft_swap(stack, 'a', true);
 		if (is_sorted(stack))
 			return ;
 		if (r < length - r)
-			ft_rotate(stack, 'a');
+			ft_rotate(stack, 'a', true);
 		else
-			ft_reverse_rotate(stack, 'a');
+			ft_reverse_rotate(stack, 'a', true);
 	}
 }
 
@@ -73,10 +73,10 @@ void	s_insertion_sort(t_stack *stack_a, t_stack *stack_b, int length)
 		if (count(stack_a->head, min_index) <= n - min_index - \
 			count(stack_a->head, min_index))
 			while (stack_a->head->s_index != min_index)
-				ft_rotate(stack_a, 'a');
+				ft_rotate(stack_a, 'a', true);
 		else
 			while (stack_a->head->s_index != min_index)
-				ft_reverse_rotate(stack_a, 'a');
+				ft_reverse_rotate(stack_a, 'a', true);
 		if (is_sorted(stack_a) && stack_b->size == 0)
 			return ;
 		ft_push(stack_b, stack_a, 'b');
@@ -88,7 +88,7 @@ void	s_insertion_sort(t_stack *stack_a, t_stack *stack_b, int length)
 		ft_push(stack_a, stack_b, 'a');
 }
 
-void	k_sort1(t_stack *stack_a, t_stack *stack_b, int length)
+void	sort_in_b(t_stack *stack_a, t_stack *stack_b, int length)
 {
 	int	i;
 	int	range;
@@ -100,7 +100,7 @@ void	k_sort1(t_stack *stack_a, t_stack *stack_b, int length)
 		if (stack_a->head->s_index <= i)
 		{
 			ft_push(stack_b, stack_a, 'b');
-			ft_rotate(stack_b, 'b');
+			ft_rotate(stack_b, 'b', true);
 			i++;
 		}
 		else if (stack_a->head->s_index <= i + range)
@@ -109,11 +109,11 @@ void	k_sort1(t_stack *stack_a, t_stack *stack_b, int length)
 			i++;
 		}
 		else
-			ft_rotate(stack_a, 'a');
+			ft_rotate(stack_a, 'a', true);
 	}
 }
 
-void	k_sort2(t_stack *stack_a, t_stack *stack_b, int length)
+void	sort_in_a(t_stack *stack_a, t_stack *stack_b, int length)
 {
 	int	rb_count;
 	int	rrb_count;
@@ -125,14 +125,14 @@ void	k_sort2(t_stack *stack_a, t_stack *stack_b, int length)
 		if (rb_count <= rrb_count)
 		{
 			while (stack_b->head->s_index != length - 1)
-				ft_rotate(stack_b, 'b');
+				ft_rotate(stack_b, 'b', true);
 			ft_push(stack_a, stack_b, 'a');
 			length--;
 		}
 		else
 		{
 			while (stack_b->head->s_index != length - 1)
-				ft_reverse_rotate(stack_b, 'b');
+				ft_reverse_rotate(stack_b, 'b', true);
 			ft_push(stack_a, stack_b, 'a');
 			length--;
 		}

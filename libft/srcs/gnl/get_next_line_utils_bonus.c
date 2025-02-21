@@ -1,13 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.c                                          :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: walidailas <walidailas@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/27 10:47:00 by walidailas        #+#    #+#             */
-/*   Updated: 2025/01/27 12:26:44 by wailas           ###   ########.fr       */
+/*   Created: 2024/12/24 11:43:33 by wailas            #+#    #+#             */
+/*   Updated: 2025/02/05 16:38:46 by walidailas       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../../include/get_next_line_bonus.h"
+
+int	ft_found(const char *str)
+{
+	int	i;
+
+	i = 0;
+	if (!str)
+		return (-1);
+	while (str && str[i])
+	{
+		if (str[i] == '\n')
+			return (i);
+		i++;
+	}
+	return (-1);
+}

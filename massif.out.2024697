@@ -1,0 +1,239 @@
+desc: (none)
+cmd: ./push_swap 2
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=159552
+mem_heap_B=16
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=159676
+mem_heap_B=18
+mem_heap_extra_B=30
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=160802
+mem_heap_B=18
+mem_heap_extra_B=30
+mem_stacks_B=0
+heap_tree=detailed
+n2: 18 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 16 0x402E15: ft_split (in /home/wailas/Push_swap/push_swap)
+  n1: 16 0x401881: verif_arg (verif.c:78)
+   n0: 16 0x40132F: main (main.c:59)
+ n1: 2 0x403030: get_string (in /home/wailas/Push_swap/push_swap)
+  n1: 2 0x402FB1: ft_split2 (in /home/wailas/Push_swap/push_swap)
+   n1: 2 0x402E44: ft_split (in /home/wailas/Push_swap/push_swap)
+    n1: 2 0x401881: verif_arg (verif.c:78)
+     n0: 2 0x40132F: main (main.c:59)
+#-----------
+snapshot=4
+#-----------
+time=160802
+mem_heap_B=16
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=160932
+mem_heap_B=32
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=161056
+mem_heap_B=34
+mem_heap_extra_B=38
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=161277
+mem_heap_B=34
+mem_heap_extra_B=38
+mem_stacks_B=0
+heap_tree=detailed
+n2: 34 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 32 0x402E15: ft_split (in /home/wailas/Push_swap/push_swap)
+  n1: 16 0x401881: verif_arg (verif.c:78)
+   n0: 16 0x40132F: main (main.c:59)
+  n1: 16 0x4029AD: allocate_result_array (split_arg.c:25)
+   n1: 16 0x402B12: split_arguments (split_arg.c:62)
+    n1: 16 0x401E62: init_stack (init.c:91)
+     n0: 16 0x401343: main (main.c:60)
+ n1: 2 0x403030: get_string (in /home/wailas/Push_swap/push_swap)
+  n1: 2 0x402FB1: ft_split2 (in /home/wailas/Push_swap/push_swap)
+   n2: 2 0x402E44: ft_split (in /home/wailas/Push_swap/push_swap)
+    n1: 2 0x4029AD: allocate_result_array (split_arg.c:25)
+     n1: 2 0x402B12: split_arguments (split_arg.c:62)
+      n1: 2 0x401E62: init_stack (init.c:91)
+       n0: 2 0x401343: main (main.c:60)
+    n1: 0 0x401881: verif_arg (verif.c:78)
+     n0: 0 0x40132F: main (main.c:59)
+#-----------
+snapshot=8
+#-----------
+time=161277
+mem_heap_B=32
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=161314
+mem_heap_B=16
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=161358
+mem_heap_B=32
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=161468
+mem_heap_B=48
+mem_heap_extra_B=24
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=161592
+mem_heap_B=50
+mem_heap_extra_B=46
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=161783
+mem_heap_B=52
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=161879
+mem_heap_B=52
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=peak
+n4: 52 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 32 0x402E15: ft_split (in /home/wailas/Push_swap/push_swap)
+  n1: 16 0x401881: verif_arg (verif.c:78)
+   n0: 16 0x40132F: main (main.c:59)
+  n1: 16 0x402A59: fill_result_array (split_arg.c:43)
+   n1: 16 0x402B42: split_arguments (split_arg.c:65)
+    n1: 16 0x401E62: init_stack (init.c:91)
+     n0: 16 0x401343: main (main.c:60)
+  n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 16 0x4029FD: allocate_result_array (split_arg.c:30)
+  n1: 16 0x402B12: split_arguments (split_arg.c:62)
+   n1: 16 0x401E62: init_stack (init.c:91)
+    n0: 16 0x401343: main (main.c:60)
+ n1: 2 0x403030: get_string (in /home/wailas/Push_swap/push_swap)
+  n1: 2 0x402FB1: ft_split2 (in /home/wailas/Push_swap/push_swap)
+   n2: 2 0x402E44: ft_split (in /home/wailas/Push_swap/push_swap)
+    n1: 2 0x402A59: fill_result_array (split_arg.c:43)
+     n1: 2 0x402B42: split_arguments (split_arg.c:65)
+      n1: 2 0x401E62: init_stack (init.c:91)
+       n0: 2 0x401343: main (main.c:60)
+    n0: 0 in 2 places, all below massif's threshold (1.00%)
+ n1: 2 0x4030D4: ft_strdup (in /home/wailas/Push_swap/push_swap)
+  n1: 2 0x402A88: fill_result_array (split_arg.c:47)
+   n1: 2 0x402B42: split_arguments (split_arg.c:65)
+    n1: 2 0x401E62: init_stack (init.c:91)
+     n0: 2 0x401343: main (main.c:60)
+#-----------
+snapshot=15
+#-----------
+time=161879
+mem_heap_B=50
+mem_heap_extra_B=46
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=161916
+mem_heap_B=34
+mem_heap_extra_B=38
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=161984
+mem_heap_B=38
+mem_heap_extra_B=58
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=162921
+mem_heap_B=36
+mem_heap_extra_B=36
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=162958
+mem_heap_B=20
+mem_heap_extra_B=28
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=163020
+mem_heap_B=36
+mem_heap_extra_B=36
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=163131
+mem_heap_B=32
+mem_heap_extra_B=16
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=163232
+mem_heap_B=16
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty

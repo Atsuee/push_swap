@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wailas <wailas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: walidailas <walidailas@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 12:23:38 by wailas            #+#    #+#             */
-/*   Updated: 2025/01/15 12:23:39 by wailas           ###   ########.fr       */
+/*   Updated: 2025/01/29 15:38:40 by wailas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,28 +55,27 @@ int	is_sorted(t_stack *stack)
 	return (1);
 }
 
-void	sort(t_stack *stack_a, t_stack *stack_b, int *numbers)
+void	sort(t_stack *stack_a, t_stack *stack_b)
 {
 	int	length;
 
 	length = ft_lstsize_stack(stack_a->head);
 	if (is_sorted(stack_a))
 	{
-		free(numbers);
 		free_stack(stack_a);
-		display_error("");
+		display_error("", NULL, NULL);
 	}
 	else if (length == 2)
-		ft_swap(stack_a, 'a');
+		ft_swap(stack_a, 'a', true);
 	else if (length == 3)
 		simple_sort(stack_a, length);
 	else if (length <= 7)
 		s_insertion_sort(stack_a, stack_b, length);
 	else if (length > 7)
 	{
-		k_sort1(stack_a, stack_b, length);
-		k_sort2(stack_a, stack_b, length);
+		sort_in_b(stack_a, stack_b, length);
+		sort_in_a(stack_a, stack_b, length);
 	}
 	else
-		display_error("");
+		display_error("", NULL, NULL);
 }

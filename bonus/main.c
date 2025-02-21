@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wailas <wailas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/06 17:47:16 by wailas            #+#    #+#             */
-/*   Updated: 2025/02/06 14:59:14 by wailas           ###   ########.fr       */
+/*   Created: 2025/02/03 11:50:49 by wailas            #+#    #+#             */
+/*   Updated: 2025/02/03 16:36:55 by wailas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "checker.h"
 
 void	ft_free(char **str)
 {
@@ -39,25 +39,6 @@ void	free_stack(t_stack *stack)
 	}
 }
 
-void	printf_stack(t_stack *stack, char *stack_name)
-{
-	t_node	*current;
-
-	if (!stack || !stack->head)
-	{
-		ft_printf("%s is empty.\n", stack_name);
-		return ;
-	}
-	ft_printf("%s (size: %d):\n", stack_name, stack->size);
-	current = stack->head;
-	while (current)
-	{
-		ft_printf("Data: %d, Index: %d\n", current->data, current->s_index);
-		current = current->next;
-	}
-	ft_printf("--------------\n");
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	stack_a;
@@ -71,7 +52,7 @@ int	main(int argc, char **argv)
 		display_error("", NULL, NULL);
 	verif_arg(argc, argv);
 	init_stack(&stack_a, &stack_b, argc, argv);
-	sort(&stack_a, &stack_b);
+	ft_check(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
